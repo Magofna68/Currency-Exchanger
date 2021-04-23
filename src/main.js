@@ -13,6 +13,10 @@ import Currency from "./Currency.js"
 // })
 
 $(document).ready(function () {
+  $(".btn").on(click) {
+    let currency = document.getElementById("#dropdownMenu1");
+    let amount = document.getElementsByClassName(".form-control");
+  }
   let promise = Currency.getConversion();
   promise.then(function (result) {
     const body = JSON.parse(conversion_result);
