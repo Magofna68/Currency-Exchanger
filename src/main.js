@@ -14,27 +14,30 @@ function displayConvertedCurrency(currencyConverter) {
 }
 
 $(document).ready(function () {
-  $('#conversionBtn').click(function () {
+  $('#conversionBtn').click(function (e) {
     let currency = $("#currency").val();
     let amount = $("#numberInput").val();
     clearFields();
     Currency.getConversion(currency, amount);
-    Promise.prototype.then(function (result) {
+      .then(function (result) {
       if (result instanceof Error) {
-        $(.error).text(`Currency-Exchanger API error: ${result}`);
-      } else if (!input) {
-        $('.error').text('Please enter a number to convert')
+        $('.error').text(`Currency-Exchanger API error: ${result}`);
       } else if (currency === "") {
         $('.error').text('Please select a currency')
+      } else if (!input) {
+        $('.error').text('Please enter a number to convert')
       } else if (result) {
-        $('.showCurrencyResult').text('')
+        $('.showCurrencyResult').text('The conversion of ${response.base_code} to ${response.target_code} totals ${response.conversion_result}');
+      } else {
+        return;
       }
-        let currencyConverter = url.conversion_result;
-        displayConvertedCurrency(currencyConverter);
-      }
+      console.log(Currency.getConversion(currency, amount))
+      let currencyConverter = ('${response.conversion_result}');
+      displayConvertedCurrency(currencyConverter);
     })
   })
 })
+
 // Currency.getConversion(currency, amount);
 // Promise.prototype.then(function (result) {
 //   if (result instanceof Error) {
