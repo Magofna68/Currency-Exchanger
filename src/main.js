@@ -9,8 +9,18 @@ function clearFields() {
   $("#numberInput").val("")
 }
 
-function displayConvertedCurrency(currencyConverter) {
-  $('.showCurrencyResult').text('The conversion is ${currencyResult}!')
+function displayConvertedCurrency(response, amount, currency) {
+  if (response instanceof Error) {
+    $('.error').text(`Currency-Exchanger API error: ${result}`);
+  } else if (currency === "") {
+    $('.error').text('Please select a currency')
+  } else if (!amount) {
+    $('.error').text('Please enter a number to convert')
+  } else if (response) {
+    $('.showCurrencyResult').text('The conversion of ${response.base_code} to ${response.target_code} totals ${response.conversion_result}');
+  } else {
+    return;
+  }
 }
 
 $(document).ready(function () {
@@ -18,23 +28,12 @@ $(document).ready(function () {
     let currency = $("#currency").val();
     let amount = $("#numberInput").val();
     clearFields();
-    Currency.getConversion(currency, amount);
-      .then(function (result) {
-      if (result instanceof Error) {
-        $('.error').text(`Currency-Exchanger API error: ${result}`);
-      } else if (currency === "") {
-        $('.error').text('Please select a currency')
-      } else if (!input) {
-        $('.error').text('Please enter a number to convert')
-      } else if (result) {
-        $('.showCurrencyResult').text('The conversion of ${response.base_code} to ${response.target_code} totals ${response.conversion_result}');
-      } else {
-        return;
-      }
-      console.log(Currency.getConversion(currency, amount))
+    Currency.getConversion(response, amount, currency);
+      .then(function (response) {
       let currencyConverter = ('${response.conversion_result}');
-      displayConvertedCurrency(currencyConverter);
+      displayConvertedCurrency(response, amount, currency);
     })
+    console.log(Currency.getConversion(response, currency, amount))
   })
 })
 
