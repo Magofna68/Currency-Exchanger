@@ -8,7 +8,7 @@ function clearFields() {
   $("#numberInput").val("");
 }
 
-function displayConvertedCurrency(response, amount, currency) {
+function displayConvertedCurrency(response, currency, amount) {
   if (response.result instanceof Error) {
     $('.error').text(`Currency-Exchanger API error: ${response.result}`);
   } else if (currency === "") {
@@ -27,8 +27,8 @@ $(document).ready(function () {
     let currency = $("#currency").val();
     let amount = $("#numberInput").val();
     clearFields();
-    Currency.getConversion(amount, currency).then(function () {
-      displayConvertedCurrency(response, amount, currency);
+    Currency.getConversion(amount, currency).then(function (response) {
+      displayConvertedCurrency(response);
     });
   });
 });
