@@ -21,8 +21,14 @@ $(document).ready(function () {
     Currency.getConversion(currency, amount);
     Promise.prototype.then(function (result) {
       if (result instanceof Error) {
-        throw Error(`Currency-Exchanger API error: ${result}`);
-      } else {
+        $(.error).text(`Currency-Exchanger API error: ${result}`);
+      } else if (!input) {
+        $('.error').text('Please enter a number to convert')
+      } else if (currency === "") {
+        $('.error').text('Please select a currency')
+      } else if (result) {
+        $('.showCurrencyResult').text('')
+      }
         let currencyConverter = url.conversion_result;
         displayConvertedCurrency(currencyConverter);
       }
