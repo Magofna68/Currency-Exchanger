@@ -9,23 +9,8 @@
 </head>
 
 <body>
+  <h1>Currency Exchanger</h1>
   <div class="container">
-    <h1>Currency-Exchanger</h1>
-    <label for="currency">Select a Currency to convert:</label>
-    <div class="dropdown">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
-        aria-haspopup="true" aria-expanded="false">
-        Currency:
-      </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
-        <a class="dropdown-item" href="#!">AUD</a>
-        <a class="dropdown-item" href="#!">USD</a>
-        <a class="dropdown-item" href="#!">EUR</a>
-        <a class="dropdown-item" href="#!">BAM</a>
-        <a class="dropdown-item" href="#!">AED</a>
-      </div>
-      <div class="initial-currency"></div>
-    </div>
     <label for="currency">Select a Currency to be converted too:</label>
     <div class="dropdown">
       <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
@@ -39,6 +24,18 @@
         <a class="dropdown-item" href="#!">BAM</a>
         <a class="dropdown-item" href="#!">AED</a>
       </div>
+      <br>
+      <br>
+      <label for="convert">Type in the USD dollar amount you wish to convert:</label>
+      <br>
+      <br>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <button class="btn btn-success" type="button">convert</button>
+        </div>
+        <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
+      </div>
+
       <div class="conv-currency"></div>
     </div>
     <div class="show-errors"></div>

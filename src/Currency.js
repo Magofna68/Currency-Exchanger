@@ -3,7 +3,7 @@ export default class Currency {
     return fetch(`https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/latest/${currency}?`)
       .then(function (result) {
         if (!Response.ok) {
-          throw Error(result.error - type);
+          throw Error(result.error-type);
         }
         return result.json();
       })
