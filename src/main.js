@@ -4,6 +4,31 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./css/styles.css";
 import Currency from "./Currency.js"
 
+function clearFields() {
+  $("#currency").val("")
+  $("#numberInput").val("")
+}
+
+function displayConvertedCurrency(currencyConverter) {
+  $('.showCurrencyResult').text('The conversion is ${currencyResult}!')
+}
+
+$(document).ready(function () {
+  $('#conversionBtn').click(function () {
+    let currency = $("#currency").val();
+    let amount = $("#numberInput").val();
+    clearFields();
+    Currency.getConversion(currency, amount);
+    Promise.prototype.then(function (result) {
+      if (result instanceof Error) {
+        throw Error(`Currency-Exchanger API error: ${result}`);
+      } else {
+        let currencyConverter = url.conversion_result;
+        displayConvertedCurrency(currencyConverter);
+      }
+    })
+  })
+})
 // Currency.getConversion(currency, amount);
 // Promise.prototype.then(function (result) {
 //   if (result instanceof Error) {
@@ -11,15 +36,3 @@ import Currency from "./Currency.js"
 //   }
 //   const placeholder = conversion_result.json()
 // })
-
-$(document).ready(function () {
-  $(".btn").on(click) {
-    let currency = document.getElementById("#dropdownMenu1");
-    let amount = document.getElementsByClassName(".form-control");
-  }
-  let promise = Currency.getConversion();
-  promise.then(function (result) {
-    const body = JSON.parse(conversion_result);
-    $(".currency").text(body);
-  })
-})

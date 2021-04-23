@@ -2,43 +2,34 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Currency-Exchanger</title>
 </head>
 
 <body>
   <h1>Currency Exchanger</h1>
   <div class="container">
-    <label for="currency">Select a Currency to be converted too:</label>
-    <div class="dropdown">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
-        aria-haspopup="true" aria-expanded="false">
-        Currency:
-      </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
-        <a class="dropdown-item" href="#!">AUD</a>
-        <a class="dropdown-item" href="#!">USD</a>
-        <a class="dropdown-item" href="#!">EUR</a>
-        <a class="dropdown-item" href="#!">BAM</a>
-        <a class="dropdown-item" href="#!">AED</a>
-      </div>
-      <br>
-      <br>
-      <label for="convert">Type in the USD dollar amount you wish to convert:</label>
-      <br>
-      <br>
-      <div class="input-group">
-        <div class="input-group-prepend">
-          <button class="btn btn-success" type="button">convert</button>
-        </div>
-        <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
-      </div>
-
-      <div class="currency"></div>
+    <div class="form-group">
+      <label for="currency">Select a Currency to be converted into:</label>
+      <select id="currency" name="currency">
+        <option value="">Currencies:</option>
+        <option value="EUR">Euro</option>
+        <option value="BAM">B&H convertible mark</option>
+        <option value="AUD">Australian</option>
+        <option value="USD">Dollar</option>
+        <option value="AED">United Arab Emirates</option>
+      </select>
     </div>
-    <div class="show-errors"></div>
+    <br>
+    <div>
+      <div>
+        <label for="numberInput">Type in the USD dollar amount you wish to convert:</label>
+        <input type="number" id="numberInput" min="0" required>
+      </div>
+      <button type="button" class="btn btn-dark" id="conversionBtn">Get Conversion!</button>
+    </div>
+  </div>
+  <div class="showCurrencyResult"></div>
+  <div class="show-errors"></div>
   </div>
 </body>
 
