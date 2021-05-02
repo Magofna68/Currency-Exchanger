@@ -32,12 +32,3 @@ function displayConvertedCurrency(response, currency, amount) {
     return;
   }
 }
-
-
-// Currency.getConversion(currency, amount);
-// Promise.prototype.then(function (result) {
-//   if (result instanceof Error) {
-//     throw Error('Currency-Exchange API error: ${result.error-type}');
-//   }
-//   const placeholder = conversion_result.json()
-// })

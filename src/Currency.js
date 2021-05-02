@@ -12,24 +12,3 @@ export default class Currency {
       })
   }
 }
-
-// I continuously got a CORS error  --  so tried fetch() & promises to try to remedy the issue; to no avail. May be having issues with my webpack as well?  --  normally would delete all this commented out code, but wanted to gauge how / why my code wasn't functioning properly.
-
-
-// export default class Currency {
-//   static getConversion(currency, amount) {
-//     return new Promise(function (resolve, reject) {
-//       let request = new XMLHttpRequest();
-//       const url = `https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/pair/USD/${currency}/${amount}`;
-//       request.onload = function () {
-//         if (this.status === 200) {
-//           resolve(request.response);
-//         } else {
-//           reject(request.response);
-//         }
-//       };
-//       request.open("GET", url, true);
-//       request.send();
-//     });
-//   }
-// }
