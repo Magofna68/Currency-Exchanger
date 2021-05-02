@@ -6,8 +6,9 @@ import Currency from "./Currency.js";
 
 function clearFields() {
   $("#numberInput").val("");
+  $(".showCurrencyResult").val("");
+  $(".error").val("");
 }
-
 
 $(document).ready(function () {
   $('#conversionBtn').click(function () {
@@ -15,20 +16,18 @@ $(document).ready(function () {
     const amount = $("#numberInput").val();
     clearFields();
     Currency.getConversion(amount, currency).then(function (response) {
-      displayConvertedCurrency(response);
+      displayConvertedCurrency(response, currency, amount);
     });
   });
 });
 
 function displayConvertedCurrency(response, currency, amount) {
-  if (response.result === Error) {
-    $('.error').text(`Currency-Exchanger API error: ${response.result}`);
-  } else if (currency === "") {
-    $('.error').text('Please select a conversion currency');
-  } else if (amount === "" || 0) {
-    $('.error').text('Please enter a number to convert');
+  if (response.result === 'error') {
+    $('.showCurrencyResult').text('Sorry, that currency does not exist. Please select a currency to convert.')
+  } else if (amount === "0" || amount === "") {
+    $('.showCurrencyResult').text('Please enter a valid number to convert');
   } else if (response) {
-    $('.showCurrencyResult').text('The conversion of ${response.base_code} to ${response.target_code} totals ${response.conversion_result}');
+    $('.showCurrencyResult').text(`The conversion of ${response.base_code} to ${response.target_code} totals ${response.conversion_result}`);
   } else {
     return;
   }

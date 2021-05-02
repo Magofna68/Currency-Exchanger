@@ -14,17 +14,26 @@ _App will take value of current commerce and translate that into various currenc
 2. [Node](https://nodejs.org/en/)
 3. A code editor like VS Code or Atom to view or edit the codebase.
 
+# API-Key set up:
+
+- Visit the ExchangeRate-API site (https://www.exchangerate-api.com/). Input your email address and click the "Get Free Key" button.
+- You'll be prompted to create an account with your email, first name and a password. Agree to the terms of use and click "Get Started!"
+- At this point, you'll be able to access a dashboard that includes your API key as well as your remaining API calls for the month.
+- house your file within an .env file on your project and follow documentation from the site to utilize your key to access the sites API information.
+
 ### Installation
 
-1. Clone the repository: `$ git clone {}`
-2. Navigate to the `{project-folder}` directory on your computer
+1. Navigate to github repo to clone and click on the green 'code' button
+2. Copy the URL and run 'git clone [copied URL] in a directory on your computer
 3. Open with your preferred text editor to view the code base
-4. To start a development server and view the project in the browser:
+4. After opening project, create a .env file and store the key you created above
+5. Add a .env file in your root directory and set your key equal to a variable named: API_KEY
+6. Add it to your .gitignore repository to ensure privacy
+5. To start a development server and view the project in the browser:
    - Navigate to `{project-folder}` in your command line
    - Run the command `npm install` to install dependencies
    - Run the command `npm run build` to make a bundle of the files
    - Run the command `npm run start` to start a development server
-5. To run tests, navigate to `{project-folder}` in your terminal and run the command `npm run test`
 
 #### To see my live website go to https://github.com/Magofna68?tab=repositories
 
@@ -39,22 +48,14 @@ _Please reach out through my GitHub account._
 ## Technologies Used
 
 - HTML
-- CSS
 - JavaScript
 - VS Code
-- Jest
 - Webpack
 - Node
 - Babel
 - Eslint
 - Bootstrap
 
-# API-Key set up:
-
-- Visit the ExchangeRate-API site. Input your email address and click the "Get Free Key" button.
-- You'll be prompted to create an account with your email, first name and a password. Agree to the terms of use and click "Get Started!"
-- At this point, you'll be able to access a dashboard that includes your API key as well as your remaining API calls for the month.
-- house your file within an .env file on your project and follow documentation from the site to utilize your key to access the sites API information.
 
 ### License
 
