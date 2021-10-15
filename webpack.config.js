@@ -16,7 +16,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: "currency-exchange",
+      title: "Currency-Exchange",
       template: "./src/index.html",
       inject: "body",
     }),

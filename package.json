@@ -1,5 +1,5 @@
 {
-  "name": "currency-exchange",
+  "name": "Currency-Exchanger",
   "version": "1.0.0",
   "description": "",
   "homepage": "http://Magofna68.github.io/Currency-Exchanger",
@@ -10,7 +10,7 @@
     "lint": "eslint src/*.js",
     "test": "jest --coverage",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -b main -d build"
+    "deploy": "gh-pages -b master -d build"
   },
   "keywords": [],
   "author": "Brandon Magofna",
