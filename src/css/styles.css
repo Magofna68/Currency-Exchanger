@@ -15,7 +15,6 @@ body {
   justify-content: center;
   align-content: center;
   border-radius: 50px;
-  /* margin: 20px 0 20px 0; */
 
   height: 600px;
   background-position: center;
@@ -28,5 +27,4 @@ h4 {
   background-color: white;
   font-weight: 600;
   color: black;
-  /* width: 50%; */
 }
