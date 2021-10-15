@@ -1,0 +1,19 @@
+body {
+  width: 100vw;
+  flex: auto;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  text-align: center;
+  background-repeat: no-repeat;
+  justify-content: center;
+  align-content: center;
+  /* margin: 20px 0 20px 0; */
+
+  height: 900px;
+  background-position: center;
+  background-image: url("https://assets.paystack.com/assets/img/content/Get-Paid-By-Customers-From-Anywhere-In-The-World-compressor3.gif");
+}
